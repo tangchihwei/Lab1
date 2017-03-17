@@ -184,8 +184,11 @@ int tmin(void) {
  *   Rating: 2
  */
 int isTmax(int x) {
+  int a = x + x + 2; //0x7fffffff + 0x7fffffff + 2 = 0 
+  //also make sure x is not -1 = 0xffffffff
 
-  return 2; 
+
+  return !((a) | !~x) ; 
 }
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
@@ -242,11 +245,12 @@ int isAsciiDigit(int x) {
   if x is true return y, otherwise z
  */
 int conditional(int x, int y, int z) {
-  
+  int i = x >> 31;
 
 
 
-  
+
+
 
   return 2;
 }
